@@ -11,14 +11,16 @@ export default function Sidebar() {
   const menuItens = [
     { name: 'Home', path: '/', icon: 'bi-house' },
     { name: 'Dashboard', path: '/dashboard', icon: 'bi-speedometer2' },
+    { name: 'Usuários', path: '/users', icon: 'bi-people-fill'},
+    { name: 'Lojas', path: '/stores', icon: 'bi-shop'},
     { name: 'Venda', path: '/sales', icon: 'bi-currency-dollar' },
     { name: 'Estoque', path: '/stock', icon: 'bi-box-seam' },
     { name: 'Relatórios', path: '/reports', icon: 'bi-graph-up' },
   ];
 
   return (
-    <div className="d-flex me-4">
-      <div className="bg-dark text-white p-3 d-flex flex-column" style={{ width: '250px' }}>
+    <nav className="d-flex">
+      <div className="rounded-right bg-dark text-white p-2 d-flex flex-column" style={{ width: '250px' }}>
         <ul className="nav nav-pills flex-column mb-auto">
           {menuItens.map((item) => {
             const isHome = item.path === '/' && pathname === '/';
@@ -43,6 +45,6 @@ export default function Sidebar() {
           <DropdownUser />
         </div>
       </div>
-    </div>
+    </nav>
   );
 }
